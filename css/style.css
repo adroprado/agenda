@@ -1,0 +1,23 @@
+/* ====================
+Custom properties 
+==================== */
+
+/* ====================
+Initial reset 
+==================== */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+/* ====================
+Site styles
+==================== */

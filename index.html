@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Agenda de Contactos - Vanilla</title>
+  </head>
+  <body>
+    <main>
+      <article>
+        <form>
+          <a
+            href="https://github.com/adroprado/calculadora-basica"
+            target="_blank"
+          >
+            <img src="/assets/github.svg" alt="Github" />
+          </a>
+          <h2>Agregar Contacto</h2>
+          <br />
+          <input type="text" name="name" placeholder="Nombre" />
+          <br />
+          <input type="tel" name="phone" placeholder="Número teléfono" />
+          <br />
+          <input type="email" name="mail" placeholder="Correo" />
+          <br />
+          <input type="submit" value="Agregar" />
+        </form>
+      </article>
+
+      <article>
+        <h2>Contactos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <!-- Aquí vamos a insertar nuestro Template -->
+          <tbody></tbody>
+        </table>
+      </article>
+
+      <template>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><input type="button" value="Editar" /></td>
+          <td><input type="button" value="Eliminar" /></td>
+        </tr>
+      </template>
+    </main>
+  </body>
+</html>
