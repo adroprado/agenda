@@ -8,29 +8,29 @@
   </head>
   <body>
     <main>
-      <article>
-        <form>
-          <a
-            href="https://github.com/adroprado/calculadora-basica"
-            target="_blank"
-          >
-            <img src="/assets/github.svg" alt="Github" />
-          </a>
-          <h2>Agregar Contacto</h2>
-          <br />
-          <input type="text" name="name" placeholder="Nombre" />
-          <br />
-          <input type="tel" name="phone" placeholder="Número teléfono" />
-          <br />
-          <input type="email" name="mail" placeholder="Correo" />
-          <br />
-          <input type="submit" value="Agregar" />
-        </form>
-      </article>
+      <form class="container-form">
+        <a href="" target="_blank">
+          <img src="/assets/github.svg" alt="Github" />
+        </a>
+        <h2>Agregar Contacto</h2>
+        <br />
+        <input class="name" type="text" name="name" placeholder="Nombre" />
+        <br />
+        <input
+          class="phone-number"
+          type="tel"
+          name="phone"
+          placeholder="Número teléfono"
+        />
+        <br />
+        <input class="email" type="email" name="mail" placeholder="Correo" />
+        <br />
+        <input type="submit" value="Agregar" />
+      </form>
 
-      <article>
-        <h2>Contactos</h2>
-        <table>
+      <article class="container-table">
+        <h2>Lista de Contactos:</h2>
+        <table class="table">
           <thead>
             <tr>
               <th>Nombre</th>
@@ -40,17 +40,39 @@
             </tr>
           </thead>
           <!-- Aquí vamos a insertar nuestro Template -->
-          <tbody></tbody>
+          <tbody>
+            <tr>
+              <td>Usuario</td>
+              <td>55123456</td>
+              <td>usuario@correo.com</td>
+              <td><input type="button" value="Editar" /></td>
+              <td><input type="button" value="Eliminar" /></td>
+            </tr>
+            <tr>
+              <td>Usuario1</td>
+              <td>55123456</td>
+              <td>usuario1@correo.com</td>
+              <td><input type="button" value="Editar" /></td>
+              <td><input type="button" value="Eliminar" /></td>
+            </tr>
+            <tr>
+              <td>Usuario2</td>
+              <td>55123456</td>
+              <td>usuari2o@correo.com</td>
+              <td><input type="button" value="Editar" /></td>
+              <td><input type="button" value="Eliminar" /></td>
+            </tr>
+          </tbody>
         </table>
       </article>
 
-      <template>
+      <template class="template">
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><input type="button" value="Editar" /></td>
-          <td><input type="button" value="Eliminar" /></td>
+          <td class="name"></td>
+          <td class="phone-number"></td>
+          <td class="email"></td>
+          <td><input class="btn-edit" type="button" value="Editar" /></td>
+          <td><input class="btn-delete" type="button" value="Eliminar" /></td>
         </tr>
       </template>
     </main>

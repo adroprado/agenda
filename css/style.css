@@ -1,12 +1,18 @@
 /* ====================
 Custom properties 
 ==================== */
+:root {
+  --height-container: 300px;
+  --height-container: 30em;
+  --size-img-github: 2.5rem; /*2.2em*/
+}
 
 /* ====================
 Initial reset 
 ==================== */
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 *,
@@ -18,6 +24,37 @@ html {
 body {
   margin: 0;
 }
+
 /* ====================
 Site styles
 ==================== */
+main {
+  border: thin solid red;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form {
+  border: thin solid black;
+  height: 300px;
+  width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form > a {
+  border: thin solid blue;
+  border-radius: 50%;
+  padding: 0.2em;
+}
+
+.container-form > a img {
+  height: var(--size-img-github);
+  width: var(--size-img-github);
+}
