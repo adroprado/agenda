@@ -4,7 +4,7 @@ Custom properties
 :root {
   --height-container: 300px;
   --height-container: 30em;
-  --size-img-github: 2.5rem; /*2.2em*/
+  --size-img-github: 2.2rem; /*2.2em*/
 }
 
 /* ====================
@@ -38,23 +38,78 @@ main {
   align-items: center;
 }
 
-.container-form {
+.form {
   border: thin solid black;
   height: 300px;
   width: 30em;
   display: flex;
+  /* margin-bottom: 20rem; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.container-form > a {
-  border: thin solid blue;
+.form > a {
+  /* border: thin solid blue; */
   border-radius: 50%;
   padding: 0.2em;
 }
 
-.container-form > a img {
+.form > a img {
   height: var(--size-img-github);
   width: var(--size-img-github);
+}
+
+.form > input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  font-size: medium;
+  margin-bottom: 10px;
+  text-indent: 3px;
+  height: 2rem;
+  width: 14rem;
+}
+
+/* *Dar estilos */
+.form > input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus {
+}
+
+.form > input[type="submit"] {
+  border-radius: 6px;
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 10px;
+  height: 2rem;
+  width: 14rem;
+}
+
+/* *Dar estilos */
+.form > input[type="submit"]:hover {
+}
+
+.table {
+  border: thin solid black;
+}
+
+.table > thead tr {
+  font-size: x-large;
+}
+
+.contact {
+  /* font-size: x-large; */
+  font-size: 1.3rem;
+}
+
+.btn {
+  border-radius: 4px;
+  font-size: large;
+  font-weight: bold;
+  height: 2rem;
+  margin-left: 5px;
+}
+
+/* *Dar estilos */
+.btn:hover {
 }
