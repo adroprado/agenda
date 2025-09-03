@@ -4,7 +4,12 @@ Custom properties
 :root {
   --height-container: 300px;
   --height-container: 30em;
-  --size-img-github: 2.2rem; /*2.2em*/
+  --size-img-github: 2.2rem;
+  --bg-color-input: #74d4ff;
+  --bg-color-tr: #f1f5f9;
+  --bg-color-btn-submit: #5ee9b5;
+  --bg-color-btn-edit: #ffdf20; /*f7df1e*/
+  --bg-color-btn-delete: #ffa1ad; /*ff637e*/
 }
 
 /* ====================
@@ -29,7 +34,7 @@ body {
 Site styles
 ==================== */
 main {
-  border: thin solid red;
+  /* border: thin solid red; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -39,7 +44,7 @@ main {
 }
 
 .form {
-  border: thin solid black;
+  /* border: thin solid black; */
   height: 300px;
   width: 30em;
   display: flex;
@@ -70,10 +75,10 @@ input[type="email"] {
   width: 14rem;
 }
 
-/* *Dar estilos */
 .form > input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus {
+  background-color: var(--bg-color-input);
 }
 
 .form > input[type="submit"] {
@@ -85,21 +90,29 @@ input[type="email"]:focus {
   width: 14rem;
 }
 
-/* *Dar estilos */
 .form > input[type="submit"]:hover {
+  background-color: var(--bg-color-btn-submit);
+  cursor: pointer;
 }
 
 .table {
-  border: thin solid black;
+  /* border: thin solid black; */
+  margin-top: 20px;
+  margin-bottom: 150px;
 }
 
 .table > thead tr {
   font-size: x-large;
 }
 
+.table > tbody tr {
+  background-color: var(--bg-color-tr);
+}
+
+/* *Agregar las siguientes clases de estilos a nuestro código de programación */
 .contact {
-  /* font-size: x-large; */
   font-size: 1.3rem;
+  padding: 10px;
 }
 
 .btn {
@@ -110,6 +123,12 @@ input[type="email"]:focus {
   margin-left: 5px;
 }
 
-/* *Dar estilos */
-.btn:hover {
+.btn-edit:hover {
+  background-color: var(--bg-color-btn-edit);
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: var(--bg-color-btn-delete);
+  cursor: pointer;
 }

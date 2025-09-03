@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <form class="form">
+      <form class="form" autocomplete="off">
         <a href="" target="_blank">
           <img src="/assets/github.svg" alt="Github" />
         </a>
@@ -35,44 +35,18 @@
           </tr>
         </thead>
         <!-- Aquí vamos a insertar nuestro Template -->
-        <tbody>
-          <tr>
-            <td class="name contact">Usuario</td>
-            <td class="phone-number contact">55123456</td>
-            <td class="email contact">usuario@correo.com</td>
-            <td><input class="btn-edit btn" type="button" value="Editar" /></td>
-            <td>
-              <input class="btn-delete btn" type="button" value="Eliminar" />
-            </td>
-          </tr>
-          <tr>
-            <td class="name contact">Usuario1</td>
-            <td class="phone-number contact">55123456</td>
-            <td class="email contact">usuario1@correo.com</td>
-            <td><input class="btn-edit btn" type="button" value="Editar" /></td>
-            <td>
-              <input class="btn-delete btn" type="button" value="Eliminar" />
-            </td>
-          </tr>
-          <tr>
-            <td class="name contact">Usuario2</td>
-            <td class="phone-number contact">55123456</td>
-            <td class="email contact">usuario2@correo.com</td>
-            <td><input class="btn-edit btn" type="button" value="Editar" /></td>
-            <td>
-              <input class="btn-delete btn" type="button" value="Eliminar" />
-            </td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
 
       <template class="template">
         <tr>
-          <td class="name"></td>
-          <td class="phone-number"></td>
-          <td class="email"></td>
-          <td><input class="btn-edit" type="button" value="Editar" /></td>
-          <td><input class="btn-delete" type="button" value="Eliminar" /></td>
+          <td class="name contact"></td>
+          <td class="phone-number contact"></td>
+          <td class="email contact"></td>
+          <td><input class="btn-edit btn" type="button" value="Editar" /></td>
+          <td>
+            <input class="btn-delete btn" type="button" value="Eliminar" />
+          </td>
         </tr>
       </template>
     </main>
