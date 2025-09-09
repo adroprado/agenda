@@ -43,7 +43,7 @@ main {
   align-items: center;
 }
 
-.form {
+.formulario {
   /* border: thin solid black; */
   height: 300px;
   width: 30em;
@@ -54,18 +54,18 @@ main {
   align-items: center;
 }
 
-.form > a {
+.formulario > a {
   /* border: thin solid blue; */
   border-radius: 50%;
   padding: 0.2em;
 }
 
-.form > a img {
+.formulario > a img {
   height: var(--size-img-github);
   width: var(--size-img-github);
 }
 
-.form > input[type="text"],
+.formulario > input[type="text"],
 input[type="tel"],
 input[type="email"] {
   font-size: medium;
@@ -75,13 +75,13 @@ input[type="email"] {
   width: 14rem;
 }
 
-.form > input[type="text"]:focus,
+.formulario > input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus {
   background-color: var(--bg-color-input);
 }
 
-.form > input[type="submit"] {
+.formulario > input[type="submit"] {
   border-radius: 6px;
   font-size: large;
   font-weight: bold;
@@ -90,27 +90,27 @@ input[type="email"]:focus {
   width: 14rem;
 }
 
-.form > input[type="submit"]:hover {
+.formulario > input[type="submit"]:hover {
   background-color: var(--bg-color-btn-submit);
   cursor: pointer;
 }
 
-.table {
+.tabla {
   /* border: thin solid black; */
   margin-top: 20px;
   margin-bottom: 150px;
 }
 
-.table > thead tr {
+.tabla > thead tr {
   font-size: x-large;
 }
 
-.table > tbody tr {
+.tabla > tbody tr {
   background-color: var(--bg-color-tr);
 }
 
 /* *Agregar las siguientes clases de estilos a nuestro código de programación */
-.contact {
+.contacto {
   font-size: 1.3rem;
   padding: 10px;
 }
@@ -123,12 +123,12 @@ input[type="email"]:focus {
   margin-left: 5px;
 }
 
-.btn-edit:hover {
+.btn-editar:hover {
   background-color: var(--bg-color-btn-edit);
   cursor: pointer;
 }
 
-.btn-delete:hover {
+.btn-eliminar:hover {
   background-color: var(--bg-color-btn-delete);
   cursor: pointer;
 }

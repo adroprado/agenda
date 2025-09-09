@@ -1,28 +1,35 @@
 // ===========================================
 // Variables que almacenan elementos del DOM
 // ===========================================
-const $formulario = document.querySelector(".form"),
-  $tabla = document.querySelector(".table"),
-  $plantilla = document.querySelector(".template").content,
-  $fragmento = document.createDocumentFragment(),
-  $clon = document.importNode($fragmento, true);
-console.log($formulario, $tabla, $plantilla);
+const d = document,
+  $formulario = d.querySelector(".formulario"),
+  $tabla = d.querySelector(".tabla"),
+  $plantilla = d.querySelector(".plantilla").content,
+  $fragmento = d.createDocumentFragment(),
+  $clon = d.importNode($fragmento, true);
 
 // ===========================================
 // Variables globales de estado
 // ===========================================
 
-// --- Lógica captura info. De los inputs ---
-
-// const contacto = {};
-
-// --- Lógica almacenamos contactos en nuestra base de datos ---
-// const db = [];
+// --- Almacenamos contactos en nuestra base de datos ---
+// let bd = [];
 
 // ===========================================
 // Funciónes que manejan el CRUD
 // ===========================================
-// const crearContacto = () => {};
+const crearContacto = () => {
+  // --- Lógica captura información de los inputs ---
+  contacto = {
+    id: Date.now(),
+    nombre: d.querySelector(".nombre").value,
+    telefono: d.querySelector(".telefono").value,
+    correo: d.querySelector(".correo").value,
+  };
+
+  console.log(contacto);
+};
+
 // const leerContactos = () => {};
 // const editarContacto = () => {};
 // const eliminarContacto = () => {};
@@ -30,7 +37,11 @@ console.log($formulario, $tabla, $plantilla);
 // ===========================================
 // Delegación de Eventos + Evento "submit" (Interacción del Usuario)
 // ===========================================
-// $formulario.addEventListener("submit", (e) => {});
+$formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  crearContacto();
+});
 
 // ===========================================
 // Delegación de Eventos + Evento "click" (Interacción del Usuario)
