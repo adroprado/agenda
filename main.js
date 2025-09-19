@@ -16,7 +16,7 @@ let baseDeDatos = [];
 // ===========================================
 // Funciónes que manejan el CRUD
 // ===========================================
-// --- Lógica crear (Create) ---
+// --- Lógica crear contacto (Create) ---
 const crearContacto = () => {
   // --- Capturando información de los inputs ---
   const contacto = {
@@ -30,7 +30,6 @@ const crearContacto = () => {
   baseDeDatos.push(contacto);
   console.log(baseDeDatos);
   $formulario.reset(); // Limpia formulario para ingresar un nuevo contacto
-  location.reload(); // Actualiza la página
 };
 
 // --- Almacenamos base de datos en localStorage con método "setItem(key, value)"---
@@ -43,44 +42,89 @@ const contactosSet = () => {
 const contactosGet = () => {
   let contactosDelAlmacenamientoLocal = JSON.parse(ls.getItem("contactos"));
   baseDeDatos = contactosDelAlmacenamientoLocal || [];
-  console.log(baseDeDatos);
 };
 contactosGet();
 
-// --- Lógica lectura (Read) ---
+// --- Lógica leer contacto (Read) ---
 
 const leerContactos = () => {
   // Limpia el contenido actual de la tabla para evitar duplicados
   $tabla.querySelector("tbody").innerHTML = "";
 
   baseDeDatos.forEach((el) => {
-    $plantilla.querySelector(".nombre").textContent = el.nombre;
-    $plantilla.querySelector(".telefono").textContent = el.telefono;
-    $plantilla.querySelector(".correo").textContent = el.correo;
-    $plantilla.querySelector(".btn-editar").dataset.id = el.id;
-    $plantilla.querySelector(".btn-eliminar").dataset.id = el.id;
-
     const $clon = d.importNode($plantilla, true);
+
+    $clon.querySelector(".nombre").textContent = el.nombre;
+    $clon.querySelector(".telefono").textContent = el.telefono;
+    $clon.querySelector(".correo").textContent = el.correo;
+
+    // Agregando información de cada contacto en los botónes de acción como dataAttribute
+    $clon.querySelector(".btn-editar").dataset.id = el.id;
+    $clon.querySelector(".btn-eliminar").dataset.id = el.id;
+
     $fragmento.appendChild($clon);
   });
 
   $tabla.querySelector("tbody").appendChild($fragmento);
 };
-leerContactos();
 
-// const editarContacto = () => {};
+// --- Lógica editar contacto (Update) ---
+const editarContacto = (e) => {
+  if (e.target.matches(".btn-editar")) {
+    console.log(e.target);
+
+    $formulario.querySelector("h1").textContent = "Editar contacto";
+    // Pasando a los inputs del formulario la información del contacto a editar que viene en un dataset.
+    const ID = e.target.dataset.id;
+
+    baseDeDatos.find((el) => {
+      if (el.id === Number(ID)) {
+        $formulario.nombre.value = el.nombre;
+        $formulario.telefono.value = el.telefono;
+        $formulario.correo.value = el.correo;
+        $formulario.id.value = el.id;
+      }
+    });
+  }
+};
+
+// --- Lógica eliminar contacto (Delete) ---
 // const eliminarContacto = () => {};
 
 // ===========================================
-// Delegación de Eventos + Evento "submit" (Interacción del Usuario)
+// Delegación de Eventos
 // ===========================================
+// --- "DOMContentLoaded" ---
+d.addEventListener("DOMContentLoaded", leerContactos);
+
+// --- "submit" (Interacción del Usuario) ---
 $formulario.addEventListener("submit", (e) => {
   e.preventDefault();
-  crearContacto();
-  contactosSet();
+  //Si el id oculto no tiene valor, vamos a crearContacto, de lo contrario editarContacto.
+  const ID = e.target.elements.id.value;
+
+  if (!ID) {
+    crearContacto();
+    contactosSet();
+    leerContactos();
+  } else {
+    baseDeDatos = baseDeDatos.map((el) => {
+      if (el.id === Number(ID)) {
+        el.nombre = d.querySelector(".nombre").value;
+        el.telefono = d.querySelector(".telefono").value;
+        el.correo = d.querySelector(".correo").value;
+      }
+      return el;
+    });
+
+    contactosSet();
+    leerContactos();
+    $formulario.reset();
+    $formulario.querySelector("h1").textContent = "Agregar contacto";
+  }
 });
 
-// ===========================================
-// Delegación de Eventos + Evento "click" (Interacción del Usuario)
-// ===========================================
-// document.addEventListener("click", (e) => {});
+// --- "click" (Interacción del Usuario) ---
+document.addEventListener("click", (e) => {
+  editarContacto(e);
+});
