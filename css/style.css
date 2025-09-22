@@ -28,13 +28,13 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* ====================
 Site styles
 ==================== */
 main {
-  /* border: thin solid red; */
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -44,18 +44,18 @@ main {
 }
 
 .formulario {
-  /* border: thin solid black; */
+  position: absolute;
+  top: 5rem;
+
   height: 300px;
   width: 30em;
   display: flex;
-  /* margin-bottom: 20rem; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .formulario > a {
-  /* border: thin solid blue; */
   border-radius: 50%;
   padding: 0.2em;
 }
@@ -96,9 +96,11 @@ input[type="email"]:focus {
 }
 
 .tabla {
-  /* border: thin solid black; */
-  margin-top: 20px;
-  margin-bottom: 150px;
+  position: absolute;
+  top: 25rem;
+  /*Para aplcar estos estilos quitar position y top de .tabla y .formulario
+   margin-top: 20px; */
+  /* margin-bottom: 150px; */
 }
 
 .tabla > thead tr {

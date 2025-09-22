@@ -28,7 +28,6 @@ const crearContacto = () => {
 
   // --- Almacenamos contactos en nuestra base de datos ---
   baseDeDatos.push(contacto);
-  console.log(baseDeDatos);
   $formulario.reset(); // Limpia formulario para ingresar un nuevo contacto
 };
 
@@ -71,8 +70,6 @@ const leerContactos = () => {
 // --- Lógica editar contacto (Update) ---
 const editarContacto = (e) => {
   if (e.target.matches(".btn-editar")) {
-    console.log(e.target);
-
     $formulario.querySelector("h1").textContent = "Editar contacto";
     // Pasando a los inputs del formulario la información del contacto a editar que viene en un dataset.
     const ID = e.target.dataset.id;
@@ -105,6 +102,7 @@ const eliminarContacto = (e) => {
 // ===========================================
 // Delegación de Eventos
 // ===========================================
+
 // --- "DOMContentLoaded" ---
 d.addEventListener("DOMContentLoaded", leerContactos);
 
@@ -132,6 +130,7 @@ $formulario.addEventListener("submit", (e) => {
     leerContactos();
     $formulario.reset();
     $formulario.querySelector("h1").textContent = "Agregar contacto";
+    $formulario.querySelector("input[name='id']").value = ""; // limpiar el ID oculto para nuevamente ingresar un contacto
   }
 });
 
