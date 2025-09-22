@@ -89,7 +89,18 @@ const editarContacto = (e) => {
 };
 
 // --- Lógica eliminar contacto (Delete) ---
-// const eliminarContacto = () => {};
+const eliminarContacto = (e) => {
+  const ID = e.target.dataset.id;
+  if (e.target.matches(".btn-eliminar")) {
+    baseDeDatos = baseDeDatos.filter((el) => {
+      if (el.id !== Number(ID)) {
+        return el;
+      }
+    });
+    contactosSet();
+    leerContactos();
+  }
+};
 
 // ===========================================
 // Delegación de Eventos
@@ -127,4 +138,5 @@ $formulario.addEventListener("submit", (e) => {
 // --- "click" (Interacción del Usuario) ---
 document.addEventListener("click", (e) => {
   editarContacto(e);
+  eliminarContacto(e);
 });
